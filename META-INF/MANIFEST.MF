@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Specification-Title: Weapon Spell Cast
+Specification-Version: 1.0
+Implementation-Title: weapon_spell_cast
+Implementation-Version: 1.0.0

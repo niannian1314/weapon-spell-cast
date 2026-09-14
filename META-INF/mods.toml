@@ -1,0 +1,54 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="weapon_spell_cast"
+version="1.0.0"
+displayName="武器施法联动 (Weapon Spell Cast)"
+authors="2046820954@qq.com"
+credits="合并自「铁魔法武器施法」与「枪械法术联动」；依赖 Iron's Spellbooks；枪械支持依赖 TaCZ"
+description='''
+用武器施放 Iron's Spellbooks 的咒语 / Cast Iron's Spellbooks spells with weapons.
+
+三种触发方式（都可单独开关）：
+  * 近战：剑（可配置成任意武器）攻击命中时
+  * 远程：拉弓射出箭矢时
+  * 枪械：TaCZ 开枪时（没装 TaCZ 会自动跳过）
+
+配置文件：config/weapon_spell_cast-common.toml
+所有倍率（冷却/法力/回蓝）、触发概率、武器与咒语黑白名单、维度黑名单、
+以及按咒语单独覆盖倍率都可以调，改完保存即生效。
+
+Merged from "iron_magic_weapon_cast_mod" (melee/bow) and "tacz_iron_spell_gun" (guns),
+plus a full config file. Requires Iron's Spellbooks; TaCZ is optional.
+'''
+
+[[dependencies.weapon_spell_cast]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.weapon_spell_cast]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.21)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.weapon_spell_cast]]
+    modId="irons_spellbooks"
+    mandatory=true
+    versionRange="[3.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+# TaCZ 是可选依赖：装了才有枪械施法，没装照样能用近战/弓
+[[dependencies.weapon_spell_cast]]
+    modId="tacz"
+    mandatory=false
+    versionRange="*"
+    ordering="AFTER"
+    side="BOTH"
